@@ -1,0 +1,13 @@
+[Unit]
+Description=Solr Exporter
+Wants=network-online.target
+Wamts=prometheus.service
+After=network-online.target
+
+[Service]
+
+User=root
+ExecStart=/var/lib/prometheus/exporters/riak_exporter
+
+[Install]
+WantedBy=default.target
