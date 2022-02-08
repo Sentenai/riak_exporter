@@ -1,0 +1,13 @@
+[Unit]
+Description=Riak Prometheus Exporter
+After=network-online.target
+Wants=riak.service
+After=riak.service
+
+[Service]
+Type=simple
+User=prometheus
+ExecStart=/var/lib/prometheus/riak_exporter/riak_exporter -target http://riak-1:8098
+
+[Install]
+WantedBy=default.target
