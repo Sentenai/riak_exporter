@@ -7,7 +7,7 @@ After=riak.service
 [Service]
 Type=simple
 User=prometheus
-ExecStart=/var/lib/prometheus/riak_exporter/riak_exporter -target http://riak-1:8098
+ExecStart=/var/lib/prometheus/riak_exporter/riak_exporter
 
 [Install]
 WantedBy=default.target
