@@ -5,7 +5,7 @@ Wamts=prometheus.service
 After=network-online.target
 
 [Service]
-
+Type=simple
 User=root
 ExecStart=/var/lib/prometheus/exporters/riak_exporter
 
