@@ -3,11 +3,14 @@ Description=Riak Prometheus Exporter
 After=network-online.target
 Wants=riak.service
 After=riak.service
+Wants=network-online.target
+After=network-online.target
 
 [Service]
+User=exporter
 Type=simple
-User=prometheus
-ExecStart=/var/lib/prometheus/riak_exporter
+EnvironmentFile=/etc/sysconfig/riak_exporter
+ExecStart=/var/lib/prometheus/riak_exporter $OPTIONS
 
 [Install]
-WantedBy=default.target
+WantedBy=defaul.target
