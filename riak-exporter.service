@@ -6,7 +6,7 @@ After=riak.service
 
 [Service]
 User=exporter
-Group=exporter
+Group=sentenai
 Type=simple
 EnvironmentFile=/etc/sysconfig/riak_exporter
 ExecStart=/var/lib/prometheus/riak_exporter $OPTIONS
